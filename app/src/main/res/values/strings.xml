@@ -1,4 +1,16 @@
 <resources>
-    <string name="app_name">CoffeeManager</string>
+    <string-array name="menus">
+        <item>Estoque</item>
+        <item>Produtos</item>
+        <item>Fornecedores</item>
+    </string-array>
+    <string name="app_name">Coffee Manager</string>
     <string name="action_settings">Settings</string>
+    <string name="button_home">Home</string>
+    <string name="button_back">Voltar</string>
+    <string name="button_new">Novo</string>
+    <string name="button_save">Salvar</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_product_list">Produtos Lista</string>
+    <string name="title_crud_product">Cadastro de produtos</string>
 </resources>

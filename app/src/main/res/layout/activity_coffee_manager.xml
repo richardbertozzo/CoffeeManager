@@ -1,27 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:background="#331a00"
-        android:id="@+id/cabecalho" android:orientation="horizontal"
-        android:padding="10dip">
-        <TextView android:textColor="#FFFFFF" android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true" android:layout_width="fill_parent"
-            android:gravity="center_horizontal" android:id="@+id/texto1"
-            android:text="Coffee Manager" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Estoque" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fornecedores" />
+    <ListView
+        android:id="@+id/listMenus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
