@@ -9,18 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CoffeeManagerActivity">
+        <activity android:name=".activity.CoffeeManagerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProductList"
+            android:name=".activity.ProductListActivity"
             android:label="@string/title_product_list" />
         <activity
-            android:name=".ProductCrud"
+            android:name=".activity.ProductCrudActivity"
             android:label="@string/title_crud_product" />
+        <activity
+            android:name=".activity.SupplierListActivity"
+            android:label="@string/title_supplier_list" />
+        <activity
+            android:name=".activity.SupplierCrudActivity"
+            android:label="@string/title_crud_supplier" />
     </application>
 
 </manifest>

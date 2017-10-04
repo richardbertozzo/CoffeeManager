@@ -10,7 +10,16 @@
     <string name="button_back">Voltar</string>
     <string name="button_new">Novo</string>
     <string name="button_save">Salvar</string>
+    <string name="button_delete">Deletar</string>
+    <string name="button_update">Alterar</string>
+    <string name="label_name">Nome:</string>
+    <string name="label_email">E-mail:</string>
+    <string name="label_cost_price">Preço de custo:</string>
+    <string name="label_sale_price">Preço de venda:</string>
+    <string name="label_measure">Medida:</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_product_list">Produtos Lista</string>
-    <string name="title_crud_product">Cadastro de produtos</string>
+    <string name="title_crud_product">Cadastro de produto</string>
+    <string name="title_supplier_list">Fornecedores Lista</string>
+    <string name="title_crud_supplier">Cadastro de fornecedor</string>
 </resources>
