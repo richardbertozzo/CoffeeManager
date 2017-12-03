@@ -5,8 +5,17 @@ public class Phone {
     private int id;
     private int ddd;
     private int phone;
+    private int idSupplier;
 
     public Phone() {
+    }
+
+    public int getIdSupplier() {
+        return idSupplier;
+    }
+
+    public void setIdSupplier(int idSupplier) {
+        this.idSupplier = idSupplier;
     }
 
     public int getId() {

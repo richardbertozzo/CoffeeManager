@@ -11,7 +11,7 @@ import java.util.List;
 import richard.coffeemanager.constants.Constants;
 import richard.coffeemanager.model.Product;
 
-public class ProductDAO extends GenericDAO{
+public class ProductDAO extends GenericDAO {
 
     public ProductDAO(Context context) {
         super(context);

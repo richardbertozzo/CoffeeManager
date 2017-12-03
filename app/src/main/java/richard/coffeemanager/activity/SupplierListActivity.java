@@ -31,7 +31,7 @@ public class SupplierListActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        FloatingActionButton buttonNew = (FloatingActionButton) findViewById(R.id.buttonNew);
+        FloatingActionButton buttonNew = findViewById(R.id.buttonNew);
         buttonNew.setOnClickListener(v -> {
             Intent intent = new Intent(SupplierListActivity.this, SupplierCrudActivity.class);
             startActivity(intent);
@@ -58,7 +58,7 @@ public class SupplierListActivity extends AppCompatActivity {
         this.supplierController = new SupplierController(this);
         suppliers = supplierController.list();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycleView);
+        RecyclerView recyclerView = findViewById(R.id.recycleView);
         recyclerView.setAdapter(new SupplierAdpater(suppliers, this));
 
         RecyclerView.LayoutManager layout = new LinearLayoutManager(this,

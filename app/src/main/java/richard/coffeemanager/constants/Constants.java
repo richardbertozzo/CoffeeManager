@@ -19,4 +19,14 @@ public class Constants {
         public static String COLUMN_ID_PHONE = "id_phone";
         public static String COLUMN_ID_SUPPLIER = "id_supplier";
     }
+
+    public static final class Sql {
+        public static final String COMANDO_SELECT = "SELECT * FROM ";
+        public static final String WHERE = "WHERE";
+    }
+
+    public static final class Geral {
+        public static final String DOT_COM = ";";
+        public static final String EQUAL = "=";
+    }
 }

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.List;
 
@@ -28,17 +27,14 @@ public class ProductListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        FloatingActionButton buttonNew = (FloatingActionButton) findViewById(R.id.buttonNew);
-        buttonNew.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProductListActivity.this, ProductCrudActivity.class);
-                startActivity(intent);
-            }
+        FloatingActionButton buttonNew = findViewById(R.id.buttonNew);
+        buttonNew.setOnClickListener(v -> {
+            Intent intent = new Intent(ProductListActivity.this, ProductCrudActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -59,11 +55,11 @@ public class ProductListActivity extends AppCompatActivity {
         }
     }
 
-    private void getAndPutProducts(){
+    private void getAndPutProducts() {
         productController = new ProductController(this);
         products = productController.list();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycleView);
+        RecyclerView recyclerView = findViewById(R.id.recycleView);
         recyclerView.setAdapter(new ProductAdpater(products, this));
 
         RecyclerView.LayoutManager layout = new LinearLayoutManager(this,

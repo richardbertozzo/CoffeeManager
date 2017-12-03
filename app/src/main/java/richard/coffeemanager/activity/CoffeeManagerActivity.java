@@ -17,7 +17,7 @@ public class CoffeeManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_coffee_manager);
 
         String[] menus = listMenus();
-        final ListView listMenu = (ListView) findViewById(R.id.listMenus);
+        final ListView listMenu = findViewById(R.id.listMenus);
         ArrayAdapter<String> arrayAdapterListMenu = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menus);
         listMenu.setAdapter(arrayAdapterListMenu);
         listMenu.setOnItemClickListener((parent, view, position, id) -> {

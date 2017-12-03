@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import java.text.DecimalFormat;
+import java.util.Objects;
 
 import richard.coffeemanager.R;
 import richard.coffeemanager.controller.ProductController;
@@ -30,7 +36,7 @@ public class ProductCrudActivity extends AppCompatActivity {
         productController = new ProductController(this);
 
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
+        if (Objects.nonNull(actionBar)) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         clickButtonSave();
@@ -48,6 +54,7 @@ public class ProductCrudActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Product product = productHelper.makeProduct();
+                productController.insert(product);
                 Toast.makeText(ProductCrudActivity.this, "Produto: " + product.getName() + " salvo!", Toast.LENGTH_SHORT).show();
                 finish();
             }

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import richard.coffeemanager.R;
 
 public  class SupplierCrudActivity extends AppCompatActivity {
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
