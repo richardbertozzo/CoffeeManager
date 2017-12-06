@@ -40,7 +40,9 @@ public class GenericDAO extends SQLiteOpenHelper {
                 Constants.Dao.COLUMN_ID + " integer primary key autoincrement, " +
                 Constants.Dao.COLUMN_NAME + " text not null, " +
                 Constants.Dao.COLUMN_COST_PRICE + " real not null, " +
-                Constants.Dao.COLUMN_SALE_PRICE + " real not null);";
+                Constants.Dao.COLUMN_SALE_PRICE + " real not null, " +
+                Constants.Dao.COLUMN_AMOUNT + " integer not null, " +
+                Constants.Dao.COLUMN_IS_PACK + " integer not null default 0);";
     }
 
     private String createSqlSupplier() {

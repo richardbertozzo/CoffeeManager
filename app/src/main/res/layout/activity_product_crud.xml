@@ -1,4 +1,5 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -42,14 +43,16 @@
                 android:ems="7"
                 android:text="@string/label_cost_price" />
 
-            <EditText
+            <faranjit.currency.edittext.CurrencyEditText
                 android:id="@+id/productCostPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:digits="0123456789.,"
                 android:ems="10"
-                android:hint="Preço de custo"
-                android:inputType="numberDecimal" />
+                android:hint="@string/label_cost_price"
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/black"
+                app:locale="pt_BR"
+                app:showSymbol="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -64,13 +67,16 @@
                 android:ems="7"
                 android:text="@string/label_sale_price" />
 
-            <EditText
+            <faranjit.currency.edittext.CurrencyEditText
                 android:id="@+id/productSalePrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Preço de venda"
-                android:inputType="numberDecimal" />
+                android:hint="@string/label_sale_price"
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/black"
+                app:locale="pt_BR"
+                app:showSymbol="true" />
 
         </LinearLayout>
 
@@ -89,19 +95,20 @@
                 android:text="@string/label_measure" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/productRadioGroupMeasure"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioUnity"
+                    android:id="@+id/productRadioUnity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Unidade" />
 
                 <RadioButton
-                    android:id="@+id/radioPack"
+                    android:id="@+id/productRadioPack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pacote" />
@@ -133,9 +140,10 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonSave"
+            android:id="@+id/buttonSaveProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/button_save" />
 
     </LinearLayout>

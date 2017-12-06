@@ -6,10 +6,10 @@ public class Product {
     private String name;
     private Double costPrice;
     private Double salePrice;
-    //medida
-    private boolean isPack;
+    //medida = 1 = pacote e 0 = unidade
+    private Integer isPack;
     //qtd
-    private Double amount;
+    private Integer amount;
     private Supplier supplier;
 
     public Product() {
@@ -21,12 +21,12 @@ public class Product {
         this.salePrice = salePrice;
     }
 
-    public boolean isPack() {
+    public Integer getIsPack() {
         return isPack;
     }
 
-    public void setPack(boolean pack) {
-        isPack = pack;
+    public void setIsPack(Integer isPack) {
+        this.isPack = isPack;
     }
 
     public Supplier getSupplier() {
@@ -37,19 +37,11 @@ public class Product {
         this.supplier = supplier;
     }
 
-    public boolean isMeasure() {
-        return isPack;
-    }
-
-    public void setMeasure(boolean isPack) {
-        this.isPack = isPack;
-    }
-
-    public Double getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 

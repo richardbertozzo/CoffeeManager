@@ -38,5 +38,6 @@ dependencies {
     compile 'com.github.pinball83:masked-edittext:1.0.3'
     compile 'com.android.support:design:26.1.0'
     compile 'me.himanshusoni.quantityview:quantity-view:1.2.0'
+    compile 'com.github.faranjit:currency-edittext:1.0.1'
     testCompile 'junit:junit:4.12'
 }

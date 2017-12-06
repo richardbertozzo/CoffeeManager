@@ -3,10 +3,10 @@ package richard.coffeemanager.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import richard.coffeemanager.R;
 
 public class CoffeeManagerActivity extends AppCompatActivity {
@@ -23,6 +23,7 @@ public class CoffeeManagerActivity extends AppCompatActivity {
         listMenu.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent;
             if (position == 0) {
+                Toast.makeText(CoffeeManagerActivity.this, "Clicou em estoque", Toast.LENGTH_SHORT).show();
             } else if (position == 1) {
                 intent = new Intent(CoffeeManagerActivity.this, ProductListActivity.class);
                 startActivity(intent);

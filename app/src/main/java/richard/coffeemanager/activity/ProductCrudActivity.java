@@ -4,22 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.Objects;
 
 import richard.coffeemanager.R;
 import richard.coffeemanager.controller.ProductController;
 import richard.coffeemanager.crudHelper.ProductHelper;
-import richard.coffeemanager.dao.GenericDAO;
 import richard.coffeemanager.model.Product;
 
 public class ProductCrudActivity extends AppCompatActivity {
@@ -49,14 +44,15 @@ public class ProductCrudActivity extends AppCompatActivity {
     }
 
     private void clickButtonSave() {
-        Button buttonSave = (Button) findViewById(R.id.buttonSave);
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        Button buttonSave = findViewById(R.id.buttonSaveProduct);
+        buttonSave.setOnClickListener(v -> {
+            try {
                 Product product = productHelper.makeProduct();
                 productController.insert(product);
                 Toast.makeText(ProductCrudActivity.this, "Produto: " + product.getName() + " salvo!", Toast.LENGTH_SHORT).show();
                 finish();
+            } catch (ParseException e) {
+                System.out.print("Erro de parse" + e);
             }
         });
     }
@@ -71,12 +67,6 @@ public class ProductCrudActivity extends AppCompatActivity {
                 finish();
                 Intent intent = new Intent(ProductCrudActivity.this, CoffeeManagerActivity.class);
                 startActivity(intent);
-                return true;
-            case R.id.save:
-                Product product = productHelper.makeProduct();
-                productController.insert(product);
-                Toast.makeText(ProductCrudActivity.this, "Produto: " + product.getName() + " salvo!", Toast.LENGTH_SHORT).show();
-                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

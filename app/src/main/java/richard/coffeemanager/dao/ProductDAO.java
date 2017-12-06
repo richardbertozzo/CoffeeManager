@@ -23,6 +23,8 @@ public class ProductDAO extends GenericDAO {
         data.put(Constants.Dao.COLUMN_NAME, product.getName());
         data.put(Constants.Dao.COLUMN_COST_PRICE, product.getCostPrice());
         data.put(Constants.Dao.COLUMN_SALE_PRICE, product.getSalePrice());
+        data.put(Constants.Dao.COLUMN_AMOUNT, product.getAmount());
+        data.put(Constants.Dao.COLUMN_IS_PACK, product.getIsPack());
         db.insert(Constants.Dao.TABLE_PRODUCT, null, data);
         db.close();
     }
