@@ -9,50 +9,29 @@
         android:orientation="vertical"
         tools:context="richard.coffeemanager.activity.ProductCrudActivity">
 
-        <LinearLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="3dp">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/labelSupplierName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="7"
-                android:text="@string/label_name" />
-
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/supplierName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Nome forcenedor" />
+                android:hint="@string/name_product" />
 
-        </LinearLayout>
+        </android.support.design.widget.TextInputLayout>
 
-        <LinearLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="3dp">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/labelSupplierEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="7"
-                android:text="@string/label_email" />
-
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/supplierEmail"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="E-mail forcenedor"
-                android:inputType="textEmailAddress" />
+                android:hint="@string/email" />
 
-        </LinearLayout>
+        </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

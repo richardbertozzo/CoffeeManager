@@ -1,16 +1,15 @@
 package richard.coffeemanager.activity;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.text.ParseException;
-import java.util.Objects;
 
 import richard.coffeemanager.R;
 import richard.coffeemanager.controller.ProductController;
@@ -30,31 +29,14 @@ public class ProductCrudActivity extends AppCompatActivity {
         productHelper = new ProductHelper(this);
         productController = new ProductController(this);
 
-        ActionBar actionBar = getSupportActionBar();
-        if (Objects.nonNull(actionBar)) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-        clickButtonSave();
+        this.setUpToolbar();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.navigation, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation, menu);
         return true;
-    }
-
-    private void clickButtonSave() {
-        Button buttonSave = findViewById(R.id.buttonSaveProduct);
-        buttonSave.setOnClickListener(v -> {
-            try {
-                Product product = productHelper.makeProduct();
-                productController.insert(product);
-                Toast.makeText(ProductCrudActivity.this, "Produto: " + product.getName() + " salvo!", Toast.LENGTH_SHORT).show();
-                finish();
-            } catch (ParseException e) {
-                System.out.print("Erro de parse" + e);
-            }
-        });
     }
 
     @Override
@@ -63,13 +45,36 @@ public class ProductCrudActivity extends AppCompatActivity {
             case android.R.id.home:
                 onBackPressed();
                 return true;
-            case R.id.home:
+            case R.id.action_home:
                 finish();
                 Intent intent = new Intent(ProductCrudActivity.this, CoffeeManagerActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_save:
+                this.saveProduct();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void saveProduct() {
+        try {
+            Product product = productHelper.makeProduct();
+            productController.insert(product);
+            Toast.makeText(ProductCrudActivity.this, "Produto: " + product.getName() + " salvo!", Toast.LENGTH_SHORT).show();
+            finish();
+        } catch (ParseException e) {
+            System.out.print("Error of parser: " + e);
+        }
+    }
+
+    private void setUpToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbarPrdocutCrud);
+        toolbar.setTitle(getResources().getString(R.string.title_crud_product));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().show();
     }
 }

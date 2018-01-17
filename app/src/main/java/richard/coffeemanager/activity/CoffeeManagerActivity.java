@@ -3,6 +3,7 @@ package richard.coffeemanager.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -20,6 +21,12 @@ public class CoffeeManagerActivity extends AppCompatActivity {
         final ListView listMenu = findViewById(R.id.listMenus);
         ArrayAdapter<String> arrayAdapterListMenu = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menus);
         listMenu.setAdapter(arrayAdapterListMenu);
+
+        this.setUpToolbar();
+        this.setUpListMenu(listMenu);
+    }
+
+    private void setUpListMenu(ListView listMenu) {
         listMenu.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent;
             if (position == 0) {
@@ -36,5 +43,12 @@ public class CoffeeManagerActivity extends AppCompatActivity {
 
     private String[] listMenus() {
         return getResources().getStringArray(R.array.menus);
+    }
+
+    private void setUpToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbarMain);
+        toolbar.setTitle(getResources().getString(R.string.app_name));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().show();
     }
 }
